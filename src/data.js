@@ -1,10 +1,3 @@
-// export const posts = [
-//     "Hi, this first post",
-//     "Hi, this is sekond post",
-//     "Hi, this is last post("
-// ]
-
-
 
 export const posts = [
     {
