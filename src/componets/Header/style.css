@@ -1,4 +1,4 @@
-.headerStyle {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,4 +7,19 @@
     line-height: 64px;
     background-color: #4096ff;
     padding: 0 1rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 28rem;
+}
+
+.logo {
+    min-width: 6vh;
+}
+
+.text {
+    color: #fff;
+    margin-left: 2rem;
 }

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Layout } from 'antd';
-import { AppHeader } from './componets/Header/AppHeader'
+import { Header } from './componets/Header/Header'
 import './index.css'
 
 const { Footer, Content } = Layout;
 
 function App() {
   return (
-    <Layout className='layoutStyle'>
-      <AppHeader />
-      <Content className='contentStyle'>Content</Content>
-      <Footer className='footerStyle'>Footer</Footer>
+    <Layout className='layout'>
+      <Header />
+      <Content className='content'>Content</Content>
+      <Footer className='footer'>Footer</Footer>
     </Layout>
   );
 }
