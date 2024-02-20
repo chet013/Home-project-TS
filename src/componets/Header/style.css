@@ -1,5 +1,10 @@
-.header {
+.headerStyle {
     display: flex;
-    padding-left: 100px;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    line-height: 64px;
+    background-color: #4096ff;
+    padding: 0 1rem;
 }

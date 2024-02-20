@@ -1,16 +1,19 @@
 
 export const posts = [
     {
-        id: '1',
-        message: 'Hi, this first post',
+        userId: 1,
+        id: 1,
+        Name: 'Slava',
     },
     {
-        id: '2',
-        message: 'Hi, this is sekond post',
+        userId: 2,
+        id: 2,
+        Name: 'Ivan',
     },
     {
-        id: '3',
-        message: 'Hi, this is last post(',
+        userId: 3,
+        id: 3,
+        Name: 'Gosha',
     },
 
 ]
