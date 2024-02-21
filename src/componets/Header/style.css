@@ -1,5 +1,23 @@
 .header {
     display: flex;
-    padding-left: 100px;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: #4096ff;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    min-width: 50px;
+}
+
+.text {
+    color: #fff;
+    margin-left: 20px;
 }

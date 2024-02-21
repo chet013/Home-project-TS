@@ -1,15 +1,17 @@
 import React from 'react';
-import { Header } from './componets/Header/Header';
-import { Main } from './componets/Main/Main'
-import Box from '@mui/material/Box';
+import { Layout } from 'antd';
+import { Header } from './componets/Header/Header'
+import './index.css'
+
+const { Footer, Content } = Layout;
 
 function App() {
   return (
-    <Box style={{ backgroundColor: 'lightgrey', height: '100vh' }}>
+    <Layout className='layout'>
       <Header />
-      <Main />
-    </Box>
-
+      <Content className='content'>Content</Content>
+      <Footer className='footer'>Footer</Footer>
+    </Layout>
   );
 }
 

@@ -1,0 +1,23 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    text-align: center;
+    color: #fff;
+    background-color: #0958d9;
+}
+
+.footer {
+    text-align: center;
+    color: #fff;
+    background-color: #4096ff;
+}
+
+.layout {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
