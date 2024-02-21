@@ -4,22 +4,20 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    line-height: 64px;
     background-color: #4096ff;
-    padding: 0 1rem;
+    padding: 10px;
 }
 
 .container {
     display: flex;
     align-items: center;
-    max-width: 28rem;
 }
 
 .logo {
-    min-width: 6vh;
+    min-width: 50px;
 }
 
 .text {
     color: #fff;
-    margin-left: 2rem;
+    margin-left: 20px;
 }
