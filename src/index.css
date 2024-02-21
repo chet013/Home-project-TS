@@ -5,9 +5,13 @@ body {
 }
 
 .content {
-    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
     color: #fff;
     background-color: #0958d9;
+    padding: 10px;
 }
 
 .footer {
