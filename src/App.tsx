@@ -1,19 +1,18 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { Header } from './componets/Header/Header'
-import { Page } from './componets/Page/Page'
-import { PostType } from './types'
+import { ListingPageContainer } from './pages/ListingPage/ListingPageContainer'
 import './index.css'
 
 const { Footer, Content } = Layout;
 
+function App() {
 
-function App(posts: PostType[]) {
   return (
     <Layout className='layout'>
       <Header />
       <Content className='content'>
-        <Page posts={posts} />
+        <ListingPageContainer />
       </Content>
       <Footer className='footer'>Footer</Footer>
     </Layout>
