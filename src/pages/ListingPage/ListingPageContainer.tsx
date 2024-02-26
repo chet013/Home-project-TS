@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ListingPage } from './ListingPage';
 import { Post } from '../../types';
+import { getData } from '../../api/api'
+
 
 const postsData: Post[] = [
 
@@ -23,6 +25,14 @@ const postsData: Post[] = [
 ]
 
 export const ListingPageContainer = () => {
+    useEffect(() => {
+        try {
+            getData()
+        } catch { }
+
+    },
+        [])
+
     const [posts, setPosts] = useState<Post[]>(postsData);
 
     return <ListingPage posts={posts} />;
