@@ -5,33 +5,30 @@ import { getPosts } from '../../api/getPosts';
 
 
 export const ListingPageContainer = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState<Post[]>([]);
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        setLoading(true);
+
         async function fetchData() {
-            const postData = await getPosts();
-            setPosts(postData)
-            setLoading(false);
+            try {
+                setLoading(true);
+                const postData = await getPosts();
+                setPosts(postData)
+                setLoading(false);
+            } catch (error) {
+                setError(true)
+                setLoading(false);
+            }
         }
-        try {
-            setTimeout(() =>
-                fetchData(), 1000 /* проверка работы спинера */
-            );
 
-        } catch (err) {
-            setError(true)
-            setLoading(false);
-        }
+        fetchData();
     }, [])
-
 
     return <ListingPage
         posts={posts}
         loading={loading}
         error={error}
-
     />;
 };

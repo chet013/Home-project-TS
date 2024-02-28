@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { Spin, Empty, Alert } from 'antd';
+import { Spin, Empty, Alert, Button } from 'antd';
 import { PostCard } from '../../componets/PostCard/PostCard';
 import { Post } from '../../types';
 
@@ -12,17 +12,37 @@ type ListingPageProps = {
 
 export const ListingPage = ({ posts, loading, error }: ListingPageProps) => {
 
+    if (error) {
+        return (
+            <Alert
+                className='alert'
+                message="Error Text"
+                showIcon
+                description="Error Description Error Description Error Description Error Description"
+                type="error"
+                action={
+                    <Button size="small" danger>
+                        Close and try again.
+                    </Button>
+                }
+            />
+        )
+    }
+
     if (loading) {
         return (
             <Spin
                 fullscreen
                 size="large"
-                tip="looking on the shelf..." />
+                tip="looking on the shelf..."
+            />
         )
-    } else if (posts.length === 0) {
-        return <Empty className='empty' />
-    } else if (error) {
-        <Alert message="Error Text" type="error" />
+    }
+
+    if (posts.length === 0) {
+        return (
+            <Empty className='empty' />
+        )
     }
 
     return (
