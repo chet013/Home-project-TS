@@ -1,29 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ListingPage } from './ListingPage';
 import { Post } from '../../types';
+import { getPosts } from '../../api/getPosts';
 
-const postsData: Post[] = [
-
-    {
-        id: 1,
-        title: 'hi, i am Slava',
-        autorName: 'Slava',
-    },
-    {
-        id: 2,
-        title: 'hi, i am Ivan',
-        autorName: 'Ivan',
-    },
-    {
-        id: 3,
-        title: 'hi, i am Gosha',
-        autorName: 'Gosha',
-    },
-
-]
 
 export const ListingPageContainer = () => {
-    const [posts, setPosts] = useState<Post[]>(postsData);
+    const [loading, setLoading] = useState(true);
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [error, setError] = useState(false)
 
-    return <ListingPage posts={posts} />;
+    useEffect(() => {
+
+        async function fetchData() {
+            try {
+                setLoading(true);
+                const postData = await getPosts();
+                setPosts(postData)
+                setLoading(false);
+            } catch (error) {
+                setError(true)
+                setLoading(false);
+            }
+        }
+
+        fetchData();
+    }, [])
+
+    return <ListingPage
+        posts={posts}
+        loading={loading}
+        error={error}
+    />;
 };
