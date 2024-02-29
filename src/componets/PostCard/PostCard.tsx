@@ -11,7 +11,7 @@ type PostCardProps = {
 export const PostCard = ({ id, autorName, title }: PostCardProps) => {
     return (
         <div className='card'>
-            <Card bordered={false} >
+            <Card bordered={false} style={{ height: '100%' }}>
                 <div className='card-person'>
                     <Typography.Text className='card-text'>id: {id}</Typography.Text>
                     <Typography.Text className='card-text'>Autor name: {autorName} </Typography.Text>
