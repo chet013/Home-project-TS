@@ -10,6 +10,10 @@ type PostCardProps = {
 
 const { Text } = Typography
 
+const stylesCard = {
+    actions: { padding: '0 8px' }
+}
+
 export const PostCard = ({ id, autorName = 'Autor name', title }: PostCardProps) => {
     return (
         <div className='card'>
@@ -17,8 +21,9 @@ export const PostCard = ({ id, autorName = 'Autor name', title }: PostCardProps)
                 title={id}
                 extra={<Text italic type='secondary'>{autorName}</Text>}
                 bordered={false}
+                styles={stylesCard}
                 actions={[
-                    <Button className='card-button' type="primary">More</Button>
+                    <Button block className='card-button' type="primary">Read more this text?</Button>
                 ]}
             >
                 <div className='card-content'>
