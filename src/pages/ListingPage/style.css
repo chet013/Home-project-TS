@@ -4,10 +4,10 @@
     flex-wrap: wrap;
     margin: 0 auto;
     height: 100%;
-    overflow-y: scroll;
 }
 
 .cardWrapper {
+    display: flex;
     padding: 5px;
 }
 
@@ -17,5 +17,4 @@
 
 .alert {
     margin: 250px 50px;
-
 }
