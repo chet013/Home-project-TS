@@ -28,6 +28,6 @@ export const ListingPageContainer = () => {
         posts={posts}
         loading={loading}
         error={error}
-        tryAgainFetch={fetchData}
+        onClick={fetchData}
     />;
 };
