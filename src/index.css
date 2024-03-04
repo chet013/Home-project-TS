@@ -6,6 +6,7 @@ body {
 
 .content {
     background-color: #0958d9;
+    overflow-y: scroll;
 }
 
 .footer {
