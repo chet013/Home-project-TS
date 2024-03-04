@@ -3,32 +3,35 @@ import { ListingPage } from './ListingPage';
 import { Post } from '../../types';
 import { getPosts } from '../../api/getPosts';
 
-
 export const ListingPageContainer = () => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState<Post[]>([]);
     const [error, setError] = useState(false)
 
     useEffect(() => {
-
-        async function fetchData() {
-            try {
-                setLoading(true);
-                const postData = await getPosts();
-                setPosts(postData)
-                setLoading(false);
-            } catch (error) {
-                setError(true)
-                setLoading(false);
-            }
-        }
-
         fetchData();
     }, [])
+
+    async function fetchData() {
+        try {
+            setLoading(true);
+            const postData = await getPosts();
+            setPosts(postData)
+            setLoading(false);
+        } catch (error) {
+            setError(true)
+            setLoading(false);
+        }
+    }
+
+    const tryAgeinFetch = () => {
+        fetchData()
+    }
 
     return <ListingPage
         posts={posts}
         loading={loading}
         error={error}
+        tryAgeinFetch={tryAgeinFetch}
     />;
 };
