@@ -24,14 +24,10 @@ export const ListingPageContainer = () => {
         }
     }
 
-    const tryAgeinFetch = () => {
-        fetchData()
-    }
-
     return <ListingPage
         posts={posts}
         loading={loading}
         error={error}
-        tryAgeinFetch={tryAgeinFetch}
+        tryAgainFetch={fetchData}
     />;
 };

@@ -8,10 +8,10 @@ type ListingPageProps = {
     posts: Post[];
     loading: boolean;
     error: boolean;
-    tryAgeinFetch: React.MouseEventHandler<HTMLElement>;
+    tryAgainFetch: React.MouseEventHandler<HTMLElement>;
 }
 
-export const ListingPage = ({ posts, loading, error, tryAgeinFetch }: ListingPageProps) => {
+export const ListingPage = ({ posts, loading, error, tryAgainFetch }: ListingPageProps) => {
 
     if (error) {
         return (
@@ -22,7 +22,7 @@ export const ListingPage = ({ posts, loading, error, tryAgeinFetch }: ListingPag
                 description="Error Description Error Description Error Description Error Description"
                 type="error"
                 action={
-                    <Button size="small" danger onClick={tryAgeinFetch}>
+                    <Button size="small" danger onClick={tryAgainFetch}>
                         Close and try again.
                     </Button>
                 }
