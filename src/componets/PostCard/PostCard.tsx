@@ -4,7 +4,7 @@ import './style.css';
 
 type PostCardProps = {
     id: number,
-    autorName: string,
+    autorName: string | undefined,
     title: string,
 }
 
@@ -14,7 +14,7 @@ const stylesCard = {
     actions: { padding: '0 8px' }
 }
 
-export const PostCard = ({ id, autorName = 'Autor name', title }: PostCardProps) => {
+export const PostCard = ({ id, autorName = 'Anonimus', title }: PostCardProps) => {
     return (
         <div className='card'>
             <Card

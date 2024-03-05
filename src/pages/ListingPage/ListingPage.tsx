@@ -2,24 +2,25 @@ import React from 'react';
 import './style.css';
 import { Spin, Empty, Alert, Button } from 'antd';
 import { PostCard } from '../../componets/PostCard/PostCard';
-import { Post } from '../../types';
+import { Post, Autors } from '../../types';
 
 type ListingPageProps = {
     posts: Post[];
+    autors: Autors[],
     loading: boolean;
     error: boolean;
     onClick: React.MouseEventHandler<HTMLElement>;
 }
 
-export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps) => {
+export const ListingPage = ({ posts, autors, loading, error, onClick }: ListingPageProps) => {
 
     if (error) {
         return (
             <Alert
                 className='alert'
-                message="Error Text"
+                message="Ooops. Houston, we have problems. "
                 showIcon
-                description="Error Description Error Description Error Description Error Description"
+                description="Error in server, try again later"
                 type="error"
                 action={
                     <Button size="small" danger onClick={onClick}>
@@ -53,7 +54,7 @@ export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps
                     <div className='cardWrapper' key={post.id}>
                         <PostCard
                             id={post.id}
-                            autorName={post.autorName}
+                            autorName={autors.find(autor => autor.id === post.userId)?.name}
                             title={post.title}
                         />
                     </div>
