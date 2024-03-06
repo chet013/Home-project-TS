@@ -7,7 +7,6 @@ import { getAutors } from '../../api/getAutors';
 export const ListingPageContainer = () => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState<Post[]>([]);
-    const [autors, setAutors] = useState<Autors[]>([])
     const [error, setError] = useState(false)
 
     useEffect(() => {
@@ -19,8 +18,10 @@ export const ListingPageContainer = () => {
             setLoading(true);
             const postData = await getPosts();
             const autorNames = await getAutors();
+            postData.map((post: Post) => {
+                return post.autorName = autorNames.find((autor: Autors) => autor.id === post.userId)?.name
+            })
             setPosts(postData)
-            setAutors(autorNames)
             setLoading(false);
         } catch (error) {
             setError(true)
@@ -30,7 +31,6 @@ export const ListingPageContainer = () => {
 
     return <ListingPage
         posts={posts}
-        autors={autors}
         loading={loading}
         error={error}
         onClick={fetchData}

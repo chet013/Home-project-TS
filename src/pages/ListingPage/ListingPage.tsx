@@ -2,17 +2,16 @@ import React from 'react';
 import './style.css';
 import { Spin, Empty, Alert, Button } from 'antd';
 import { PostCard } from '../../componets/PostCard/PostCard';
-import { Post, Autors } from '../../types';
+import { Post } from '../../types';
 
 type ListingPageProps = {
     posts: Post[];
-    autors: Autors[],
     loading: boolean;
     error: boolean;
     onClick: React.MouseEventHandler<HTMLElement>;
 }
 
-export const ListingPage = ({ posts, autors, loading, error, onClick }: ListingPageProps) => {
+export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps) => {
 
     if (error) {
         return (
@@ -54,7 +53,7 @@ export const ListingPage = ({ posts, autors, loading, error, onClick }: ListingP
                     <div className='cardWrapper' key={post.id}>
                         <PostCard
                             id={post.id}
-                            autorName={autors.find(autor => autor.id === post.userId)?.name}
+                            autorName={post.autorName}
                             title={post.title}
                         />
                     </div>
@@ -63,7 +62,4 @@ export const ListingPage = ({ posts, autors, loading, error, onClick }: ListingP
             )}
         </div>
     );
-
-
-
 };
