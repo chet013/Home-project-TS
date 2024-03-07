@@ -17,9 +17,9 @@ export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps
         return (
             <Alert
                 className='alert'
-                message="Error Text"
+                message="Ooops. Houston, we have problems. "
                 showIcon
-                description="Error Description Error Description Error Description Error Description"
+                description="Error in server, try again later"
                 type="error"
                 action={
                     <Button size="small" danger onClick={onClick}>
@@ -62,7 +62,4 @@ export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps
             )}
         </div>
     );
-
-
-
 };

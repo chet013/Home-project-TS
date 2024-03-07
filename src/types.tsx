@@ -1,5 +1,11 @@
 export type Post = {
     id: number,
-    autorName: string,
+    userId: number,
+    autorName: string | undefined,
     title: string,
+}
+
+export type Autors = {
+    id: number,
+    name: string,
 }
