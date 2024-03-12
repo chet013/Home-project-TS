@@ -8,7 +8,7 @@ const router = createBrowserRouter([
         element: <ListingPageContainer />
     },
     {
-        path: 'PostPage',
+        path: 'post/:postId',
         element: <PostPageContainer />
     }
 ])

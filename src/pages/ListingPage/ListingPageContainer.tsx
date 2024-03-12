@@ -28,7 +28,7 @@ export const ListingPageContainer = () => {
     }, [])
 
     const goToPost = () => {
-        navigate('PostPage', { replace: false })
+        navigate(`post/id`, { replace: false })
     }
 
     async function fetchData() {
