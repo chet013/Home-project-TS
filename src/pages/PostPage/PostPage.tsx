@@ -4,7 +4,11 @@ import { Typography, Button, Flex } from 'antd'
 
 const { Text, Title } = Typography
 
-export const PostPage = () => {
+type PostPageProps = {
+    onClick: React.MouseEventHandler<HTMLElement>;
+}
+
+export const PostPage = ({ onClick }: PostPageProps) => {
     return (
         <div className='post'>
             <div className='post-wrapper'>
@@ -19,10 +23,9 @@ export const PostPage = () => {
             </div>
 
             <Flex gap='small' className='buttonsGroupe'>
-                <Button type='dashed'>Return to posts</Button>
+                <Button type='dashed' onClick={onClick}>Return to posts</Button>
                 <Button type='primary'>Add comment</Button>
             </Flex>
         </div >
     )
-
 }

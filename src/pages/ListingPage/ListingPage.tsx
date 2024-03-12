@@ -8,10 +8,11 @@ type ListingPageProps = {
     posts: Post[];
     loading: boolean;
     error: boolean;
+    getData: React.MouseEventHandler<HTMLElement>;
     onClick: React.MouseEventHandler<HTMLElement>;
 }
 
-export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps) => {
+export const ListingPage = ({ posts, loading, error, getData, onClick }: ListingPageProps) => {
 
     if (error) {
         return (
@@ -22,7 +23,7 @@ export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps
                 description="Error in server, try again later"
                 type="error"
                 action={
-                    <Button size="small" danger onClick={onClick}>
+                    <Button size="small" danger onClick={getData}>
                         Close and try again.
                     </Button>
                 }
@@ -55,6 +56,7 @@ export const ListingPage = ({ posts, loading, error, onClick }: ListingPageProps
                             id={post.id}
                             autorName={post.autorName}
                             title={post.title}
+                            onClick={onClick}
                         />
                     </div>
                 )
