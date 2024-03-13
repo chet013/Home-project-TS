@@ -6,6 +6,7 @@ type PostCardProps = {
     id: number,
     autorName: string | undefined,
     title: string,
+    onClick: React.MouseEventHandler<HTMLElement>;
 }
 
 const { Text } = Typography
@@ -14,7 +15,7 @@ const stylesCard = {
     actions: { padding: '0 8px' }
 }
 
-export const PostCard = ({ id, autorName = 'Anonimus', title }: PostCardProps) => {
+export const PostCard = ({ id, autorName = 'Anonimus', title, onClick }: PostCardProps) => {
     return (
         <div className='card'>
             <Card
@@ -23,7 +24,14 @@ export const PostCard = ({ id, autorName = 'Anonimus', title }: PostCardProps) =
                 bordered={false}
                 styles={stylesCard}
                 actions={[
-                    <Button block className='card-button' type="primary">Read more this text?</Button>
+                    <Button
+                        block
+                        className='card-button'
+                        type="primary"
+                        onClick={onClick}
+                    >
+                        Read more this text?
+                    </Button>
                 ]}
             >
                 <div className='card-content'>
