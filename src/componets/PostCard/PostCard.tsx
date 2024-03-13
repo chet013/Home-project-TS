@@ -20,6 +20,7 @@ export const PostCard = ({ id, autorName = 'Anonimus', title, onClick }: PostCar
         <div className='card'>
             <Card
                 title={id}
+                id={id.toString()}
                 extra={<Text italic type='secondary'>{autorName}</Text>}
                 bordered={false}
                 styles={stylesCard}
@@ -29,8 +30,11 @@ export const PostCard = ({ id, autorName = 'Anonimus', title, onClick }: PostCar
                         className='card-button'
                         type="primary"
                         onClick={onClick}
+                        id={id.toString()}
                     >
-                        Read more this text?
+                        <span id={id.toString()}>
+                            Read more this text?
+                        </span>
                     </Button>
                 ]}
             >

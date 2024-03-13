@@ -23,12 +23,12 @@ export const ListingPageContainer = () => {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        console.log('i am used')
         fetchData();
     }, [])
 
-    const goToPost = () => {
-        navigate(`post/id`, { replace: false })
+    const goToPost = (e: any) => {
+        navigate(`post/ ${e.target.id}`, { replace: false })
+        console.log('post id:', e.target.id)
     }
 
     async function fetchData() {

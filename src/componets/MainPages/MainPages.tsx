@@ -14,7 +14,6 @@ const router = createBrowserRouter([
 ])
 
 export const BuildPage = () => {
-
     return (
         <RouterProvider router={router} />
     )
