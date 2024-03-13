@@ -26,9 +26,8 @@ export const ListingPageContainer = () => {
         fetchData();
     }, [])
 
-    const goToPost = (e: any) => {
-        navigate(`post/ ${e.target.id}`, { replace: false })
-        console.log('post id:', e.target.id)
+    const hendleGoToPost = (id: number) => {
+        return () => navigate(`post/${id}`, { replace: false })
     }
 
     async function fetchData() {
@@ -48,7 +47,7 @@ export const ListingPageContainer = () => {
         posts={posts}
         loading={loading}
         error={error}
-        getData={fetchData}
-        onClick={goToPost}
+        onClickFetchAgain={fetchData}
+        onClickToPost={hendleGoToPost}
     />;
 };
